@@ -7,9 +7,9 @@
 
 <!-- /!\ do not modify above this line -->
 
-# Odoo modules developed by Gusti Tammam
+# Odoo Addons
 
-Odoo modules developed by Gusti Tammam
+Odoo modules by Gusti Tammam.
 
 <!-- /!\ do not modify below this line -->
 
