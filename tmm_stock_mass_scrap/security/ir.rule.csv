@@ -1,0 +1,2 @@
+id,name,model_id:id,domain_force,global,groups:id,perm_read,perm_write,perm_create,perm_unlink
+rule_model_internal_user,Model Name Rule for Internal User: CRUD,model_model_name,[],,base.group_user,1,1,1,1

@@ -1,0 +1,11 @@
+# Changes here will be overwritten by Copier
+_commit: 1.0.0
+_src_path: /opt/copier/omodule
+company_email_support: dev@tammam.id
+company_name: Gusti Tammam
+company_website: https://github.com/gustitammam/odoo-addons
+module_category: Warehouse
+module_license: LGPL-3
+module_name: Mass Scrap
+module_summary: Enhances the scrap process to allow scrapping multiple products at once.
+odoo_version: 17.0
