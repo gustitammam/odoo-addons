@@ -9,7 +9,7 @@
 
 # Odoo Addons
 
-Odoo modules by Gusti Tammam.
+Odoo modules by Gusti Tammam
 
 <!-- /!\ do not modify below this line -->
 
