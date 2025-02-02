@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="0">
+  <record id="action_window_stock_scrap_mass" model="ir.actions.act_window">
+    <field name="name">Mass Scrap</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">stock.scrap.mass</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+</odoo>

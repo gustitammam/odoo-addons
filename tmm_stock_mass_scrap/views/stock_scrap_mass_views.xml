@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="0">
+  <record id="tree_stock_scrap_mass" model="ir.ui.view">
+    <field name="name">Stock Scrap Mass Tree View</field>
+    <field name="model">stock.scrap.mass</field>
+    <field name="arch" type="xml">
+      <tree decoration-info="state == 'draft'">
+        <field name="company_id" column_invisible="True" />
+        <field name="name" decoration-bf="1" />
+        <field name="date_done" />
+        <field name="location_id" options="{'no_create': True}" groups="stock.group_stock_multi_locations" />
+        <field name="scrap_location_id" options="{'no_create': True}" groups="stock.group_stock_multi_locations" />
+        <field name="user_id" />
+        <field name="company_id" readonly="1" groups="base.group_multi_company" />
+        <field name="state" widget="badge" decoration-success="state == 'done'" decoration-muted="state == 'draft'" />
+      </tree>
+    </field>
+  </record>
+
+  <record id="form_stock_scrap_mass" model="ir.ui.view">
+    <field name="name">Stock Scrap Mass Form View</field>
+    <field name="model">stock.scrap.mass</field>
+    <field name="arch" type="xml">
+      <form string="Scrap">
+        <header>
+          <button
+            name="action_validate"
+            string="Validate"
+            class="oe_highlight"
+            type="object"
+            invisible="state == 'done'"
+          />
+          <field name="state" widget="statusbar" statusbar_visible="draft,done" />
+        </header>
+        <sheet>
+          <div class="oe_title">
+            <h1><field name="name" nolabel="1" /></h1>
+          </div>
+          <group>
+            <group>
+              <field name="user_id" readonly="state == 'done'" />
+              <field
+                name="location_id"
+                options="{'no_create': True, 'no_open': True}"
+                groups="stock.group_stock_multi_locations"
+                force_save="1"
+                readonly="state == 'done'"
+              />
+              <field
+                name="scrap_location_id"
+                options="{'no_create': True, 'no_open': True}"
+                groups="stock.group_stock_multi_locations"
+                force_save="1"
+                readonly="state == 'done'"
+              />
+            </group>
+            <group>
+              <field name="date_done" invisible="state == 'draft'" />
+              <field name="company_id" invisible="1" readonly="state == 'done'" />
+            </group>
+          </group>
+          <notebook>
+            <page name="lines" string="Scrap Lines">
+              <field name="line_ids" readonly="state == 'done'">
+                <tree editable="bottom">
+                  <field name="mass_scrap_id" column_invisible="1" />
+                  <field name="company_id" column_invisible="1" />
+                  <field name="product_uom_category_id" column_invisible="1" />
+                  <field name="product_id" options="{'no_create': True}" readonly="parent.state == 'done'" />
+                  <field name="scrap_qty" readonly="parent.state == 'done'" />
+                  <field
+                    name="product_uom_id"
+                    readonly="parent.state == 'done'"
+                    groups="uom.group_uom"
+                    force_save="1"
+                  />
+                  <field name="scrap_id" optional="hide" />
+                </tree>
+              </field>
+            </page>
+          </notebook>
+        </sheet>
+        <div class="oe_chatter">
+          <field name="message_follower_ids" />
+          <field name="message_ids" />
+        </div>
+      </form>
+    </field>
+  </record>
+</odoo>

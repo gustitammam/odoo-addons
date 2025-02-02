@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="0">
+  <menuitem
+    id="menu_item_stock_scrap_mass"
+    name="Mass Scrap"
+    parent="stock.menu_stock_adjustments"
+    action="action_window_stock_scrap_mass"
+    sequence="100"
+  />
+</odoo>
